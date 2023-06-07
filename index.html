@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="katayev.io" />
+    <meta
+      name="description"
+      content="Just my portfolio website, with a few easter eggs too >.<"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./resources/hammerHeader.png" />
+    <title>Josh Katayev</title>
+  </head>
+  <body>
+    <div class="colContainer">
+      <div class="col">
+        <div class="pfp">
+          <img class="profilePic" src="resources/picture.jpg" alt="ruhroh" />
+          <strong>Josh Katayev</strong>
+          <em class="title">Developer</em>
+          <div id="blackbox" class="social">
+            <a href="mailto: josh@katayev.io">
+              <img
+                id="mail"
+                class="socials"
+                src="./resources/email.png"
+                alt="email"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/joshkat/">
+              <img
+                id="linkedin"
+                class="linkedin"
+                src="./resources/linkedin.png"
+                alt="linkedin"
+              />
+            </a>
+            <a href="https://github.com/joshkat">
+              <img
+                id="github"
+                class="socials"
+                src="./resources/github.png"
+                alt="github"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="floatingBox">
+          <div>
+            <div class="menubar">
+              <img
+                class="headlights"
+                src="./resources/headlights_blank.png"
+                alt="shaggy"
+              />
+              <div class="menuBarCenter">
+                <img
+                  class="devFolder"
+                  src="./resources/devFolder.png"
+                  alt="no images"
+                />
+                <span class="menuBarText" id="detectBrowser"
+                  >user@katayev.io</span
+                >
+              </div>
+            </div>
+
+            <div class="wholeTerm">
+              <div class="terminalWindow primary-bg">
+                <div>
+                  <span class="code terminal-line">> ~ </span>
+                  <span
+                    class="user-Input code terminal-line"
+                    id="userInput"
+                  ></span>
+                  <input
+                    type="text"
+                    class="dummyKeyboard"
+                    id="dummy-Keyboard"
+                  />
+                </div>
+                <div id="terminalTextArea">
+                  <p class="code" id="code" style="margin: 16px 0px 0px 0px">
+                    Welcome to katayev.io, type in
+                    <span class="help">help</span> to get a list of usable
+                    commands
+                  </p>
+                  <div class="terminal-line" id="terminal-line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="./detect.js"></script>
+    <script src="browserCheck.js"></script>
+  </body>
+</html>
