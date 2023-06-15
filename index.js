@@ -6,9 +6,9 @@ const cmd = {
   resume:
     "<br>Click <a href='./katayevResume2023.pdf' id='link'>here</a> for my current resume",
   skills:
-    "<br>My current skillset includes: Java, HTML/CSS, JavaScript <br> and I'm in always in the process of learning <br> new tools to better aid me while developing :)",
+    "<br>I would describe myself as a full stack web developer and would say <br>that i'm proficient in: JavaScript, HTML, CSS, Node.js <br> along with a plethora of other technologies and frameworks related <br> to webdev [The full list of which is on my resume :)]",
   contact:
-    "<br>Feel free to reach out to me, <a id='link' href='mailto:josh@katayev.io'>josh@katayev.io</a>",
+    "<br>Feel free to reach out to me, <a id='link' href='mailto:joshua02k@gmail.com'>joshua02k@gmail.com</a>",
   yeezy:
     '<br>Yeezy, Yeezy, what\'s good? <br> It\'s your boy Max B, what\'s going on? <br> Just checking in on you <br> Appreciate the love and support <br> The wave is here <br> <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1ZnA4VYOlYIShuGt60LmCs?utm_source=generator" width="65%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>',
   easteregg:
@@ -20,7 +20,8 @@ const cmd = {
   projects: `
   <br> Training Tracker: <a href='https://github.com/joshkat/TrainingTracker' id='link'>Code</a> | <a href='https://training.katayev.io/' id='link'>Preview</a>
   <br> Sorting Visualizer: <a href='https://github.com/joshkat/visualArraySort' id='link'>Code</a> | <a href='https://joshkat.github.io/visualArraySort/' id='link'>Preview</a>
-  <br> Etch-A-Sketch: <a href='https://github.com/joshkat/Etch-A-Sketch' id='link'>Code</a> | <a href='https://katayev.io/Etch-A-Sketch/' id='link'>Preview</a>
+  <br> Spotify to Github Now Playing: <a href='https://github.com/joshkat/Github-Now-Playing' id='link'>Code</a>
+  <br> Etch-A-Sketch: <a href='https://github.com/joshkat/Etch-A-Sketch' id='link'>Code</a> | <a href='https://joshkat.github.io/Etch-A-Sketch/' id='link'>Preview</a>
   <br> Tic-Tac-Toe: <a href='https://katayev.io/tic-tac-toe/' id='link'>Preview</a>
   `,
 };
@@ -55,9 +56,9 @@ const preform = function preformCommand(input) {
 
   if (!cmd.hasOwnProperty(input)) {
     if (input.length > 45)
-      output += `<div class="code userOutput">command not found</div>`;
+      output += `<div class="code userOutput outputLine">command not found</div>`;
     if (input.length <= 45)
-      output += `<div class="code userOutput">command ${input} not found</div>`;
+      output += `<div class="code userOutput outputLine">command ${input} not found</div>`;
 
     if (input == "clear") {
       const usrOutput = document.querySelectorAll(".userOutput");

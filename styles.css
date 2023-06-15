@@ -122,7 +122,7 @@ body {
 
 .terminalWindow {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 #terminalTextArea {
