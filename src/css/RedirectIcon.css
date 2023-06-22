@@ -1,0 +1,10 @@
+.social_icon{
+    height: 40px;
+    transition: all 0.1s ease;
+    border-radius: 100%;
+}
+
+.social_icon:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px white; 
+}
