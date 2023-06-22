@@ -17,7 +17,7 @@ input {
 }
 
 .whole-terminal::-webkit-scrollbar {
-  display: none;
+  color: black;
 }
 
 #terminalTextArea p {
