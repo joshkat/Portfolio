@@ -24,6 +24,7 @@ const cmd = {
   <br> Sorting Visualizer: <a href='https://github.com/joshkat/visualArraySort' id='link'>Code</a> | <a href='https://joshkat.github.io/visualArraySort/' id='link'>Preview</a>
   <br> Spotify to Github Now Playing: <a href='https://github.com/joshkat/Github-Now-Playing' id='link'>Code</a> | <a href='https://github-now-playing.onrender.com' id='link'>Preview</a>
   <br> CV Generator: <a href='https://github.com/joshkat/CV-Generator' id='link'>Code</a> | <a href='https://cv.katayev.io' id='link'>Preview</a>
+  <br> Memory Card Game: <a href='https://github.com/joshkat/memory-card-game' id='link'>Code</a> | <a href='https://memory-game.katayev.io' id='link'>Preview</a>
   <br> Etch-A-Sketch: <a href='https://github.com/joshkat/Etch-A-Sketch' id='link'>Code</a> | <a href='https://joshkat.github.io/Etch-A-Sketch/' id='link'>Preview</a>
   `,
   qwertyuiopasdfghjklzxcvbnm: "<br>Did you mean qwerty?",
