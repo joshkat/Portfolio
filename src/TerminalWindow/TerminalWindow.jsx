@@ -1,9 +1,18 @@
+import { useEffect } from "react";
 import "../css/TerminalWindow.css";
 
 function TerminalWindow() {
+  function focusInput(){
+    document.querySelector(".dummyKeyboard").focus();
+  }
+
+  useEffect(()=>{
+    focusInput();
+  }, []);
+
   return (
     <>
-      <div className="whole-terminal">
+      <div className="whole-terminal" onClick={focusInput}>
         <div className="terminal-window primary-bg">
           <div id="terminalTextArea">
             <p className="weclome-message">
