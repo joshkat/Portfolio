@@ -4,7 +4,7 @@ const keyCode = [38];
 const cmd = {
   help: "<br>Supported list of commands: about, resume, projects, skills, contact, clear, cls",
   about:
-    "<br>Hi! <br>I'm josh, currently I'm a student persuing a degree in Computer Science at Queens College :)<br>",
+    "<br>Hi! <br>I'm josh, currently I'm a student pursuing a degree in Computer Science at Queens College :)<br>",
   resume:
     "<br>Click <a href='./resume.pdf' id='link'>here</a> for my current resume",
   skills:
