@@ -6,7 +6,7 @@ const cmd = {
   about:
     "<br>Hi! <br>I'm josh, currently I'm a student persuing a degree in Computer Science at Queens College :)<br>",
   resume:
-    "<br>Click <a href='./resume.pdf' id='link'>here</a> for my current resume",
+    "<br>Click <a href='https://drive.google.com/file/d/1Fo87zUv7M5n9ghHEIcMWF2YLyAsDqZ73' id='link'>here</a> for my current resume",
   skills:
     "<br>I would describe myself as a full stack web developer and would say that i'm proficient in: JavaScript, HTML, CSS, Node.js along with a plethora of other technologies and frameworks related to webdev [The full list of which is on my resume :)]",
   contact:
