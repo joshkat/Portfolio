@@ -11,7 +11,7 @@ function TerminalTopBar() {
           <div className="green circle"></div>
         </div>
         <div className="center-text">
-          <img src="/devFolder.png" alt="f" className="folder-img" />
+          <img src="/devFolder.png" alt="folder" className="folder-img" height={"25px"} width={"20px"}/>
           <span>user@katayev.io</span>
         </div>
       </div>

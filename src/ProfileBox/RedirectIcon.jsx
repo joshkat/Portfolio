@@ -7,7 +7,7 @@ export default function RedirectIcon({ url, alt, src }) {
   }
   return (
     <>
-      <img src={src} alt={alt} onClick={handleClick} className="social_icon" />
+      <img src={src} alt={alt} onClick={handleClick} className="social_icon" height={"40px"} width={"40px"}/>
     </>
   );
 }
