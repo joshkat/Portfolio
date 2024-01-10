@@ -75,13 +75,13 @@ export function key(e) {
   }
 
   userInput.innerText = "";
-  const container = document.querySelector(".whole-terminal");
+  const container = document.getElementById("whole-terminal");
   container.scrollTop = container.scrollHeight;
 
   if (e.key === "Enter") {
     perform(input);
     userInput.innerText = "";
-    const container = document.querySelector(".whole-terminal");
+    const container = document.getElementById("whole-terminal");
     container.scrollTop = container.scrollHeight;
     return;
   }

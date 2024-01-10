@@ -1,32 +1,3 @@
-.whole-terminal {
-  font-family: "Courier New", Courier, monospace;
-  color: rgb(199, 199, 199);
-  height: 310px;
-  max-width: 635px;
-  background-color: black;
-  word-wrap: break-word;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-anchor: auto;
-}
-
-.whole-terminal::-webkit-scrollbar {
-  color: black;
-}
-
-#terminalTextArea p {
-  margin: 10px 0 0 0;
-  border: solid black 1px;
-}
-
-.terminal-window {
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  font-stretch: expanded;
-}
-
 .help {
   color: green;
 }

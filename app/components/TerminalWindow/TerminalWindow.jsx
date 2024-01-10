@@ -16,10 +16,14 @@ function TerminalWindow() {
 
   return (
     <>
-      <div className="whole-terminal rounded-b-md" onClick={focusInput}>
-        <div className="terminal-window primary-bg">
+      <div
+        className="font-courier text-white h-80 max-w-[635px] bg-black break-words overflow-scroll overflow-x-hidden rounded-b-md"
+        id="whole-terminal"
+        onClick={focusInput}
+      >
+        <div className="text-sm ml-2 mr-2">
           <div id="terminalTextArea">
-            <p className="weclome-message">
+            <p className="mt-3">
               Welcome to katayev.io, type in <span className="help">help</span>{" "}
               to get a list of usable commands
             </p>

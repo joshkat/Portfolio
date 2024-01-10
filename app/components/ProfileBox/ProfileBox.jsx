@@ -39,7 +39,7 @@ function ProfileBox() {
             width={150}
           />
           <div className="relative">
-            <div className="absolute left-10 bottom-2 bg-zinc-900 rounded-full p-2 min-w-10 outline outline-1 outline-black">
+            <div className="flex justify-center absolute left-10 bottom-2 bg-zinc-900 rounded-full p-2 min-w-10 outline outline-1 outline-black">
               <MusicBox
                 songName={track.songName}
                 artistName={track.artistName}

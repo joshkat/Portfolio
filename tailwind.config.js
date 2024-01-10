@@ -6,6 +6,9 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      courier: ["Courier New", "Courier", "monospace"],
+    },
     extend: {
       colors: {
         "menu-red": "#ff6155",

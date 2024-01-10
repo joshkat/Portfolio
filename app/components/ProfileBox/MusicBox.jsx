@@ -9,9 +9,9 @@ function MusicBox({ songName, artistName, songURL }) {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="text-center">
+      <div className="text-center ml-1 mr-1">
         <a href="https://www.last.fm/user/josh-kat" target="_blank">
-          &nbsp;🎵
+          🎵
         </a>
       </div>
       {isHovering && (
