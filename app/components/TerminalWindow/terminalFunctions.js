@@ -1,18 +1,16 @@
-/* eslint-disable no-prototype-builtins */
-
 const keyCode = [38];
 const cmd = {
   help: "<br>Supported list of commands: about, resume, projects, skills, contact, clear, cls",
   about:
-    "<br>Hi! <br>I'm josh, currently I'm a student pursuing a degree in Computer Science at Queens College :)<br>",
+    "<br>Hey! I'm Josh, a software developer, and this is my website! On the left, you'll find a few useful links, as well as my latest spotify scrobble. You'll be interacting mostly within this terminal window, so feel free to explore 😁<br>",
   resume:
     "<br>Click <a href='https://drive.google.com/file/d/1Fo87zUv7M5n9ghHEIcMWF2YLyAsDqZ73' id='link'>here</a> for my current resume",
   skills:
-    "<br>I would describe myself as a full stack web developer and would say that i'm proficient in: JavaScript, HTML, CSS, Node.js along with a plethora of other technologies and frameworks related to webdev [The full list of which is on my resume :)]",
+    "<br>I would describe myself as a full stack web developer and am proficient in: JavaScript, React, Node.js, Express.js along with a plethora of other technologies and frameworks related to webdev [The full list of which is featured on my resume :)]",
   contact:
     "<br>Feel free to reach out to me, <a id='link' href='mailto:joshua02k@gmail.com'>joshua02k@gmail.com</a>",
   yeezy:
-    '<br>Yeezy, Yeezy, what\'s good? <br> It\'s your boy Max B, what\'s going on? <br> Just checking in on you <br> Appreciate the love and support <br> The wave is here <br> <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1ZnA4VYOlYIShuGt60LmCs?utm_source=generator" width="65%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>',
+    '<br>Yeezy, Yeezy, what\'s good? <br> It\'s your boy Max B, what\'s going on? <br> Just checking in on you <br> Appreciate the love and support <br> The wave is here <br> <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1ZnA4VYOlYIShuGt60LmCs" width="65%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>',
   easteregg:
     '<br>Wait there\'s no easter egg? <br> Always has been. <br> <img src="https://i.imgflip.com/6hdfd7.jpg" title="made at imgflip.com" height=150px>',
   stop: '<br>hammertime <br> <img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px>',
@@ -57,7 +55,7 @@ function perform(input) {
       return;
     }
 
-    if(input == "timer"){
+    if (input == "timer") {
       location = "https://timer.katayev.io";
       return;
     }
@@ -68,7 +66,7 @@ function perform(input) {
   terminalOutput.innerHTML = `${terminalOutput.innerHTML}<div class="code userOutput">${output}</div>`;
 }
 
-function key(e) {
+export function key(e) {
   const userInput = document.getElementById("userInput");
   const input = userInput.innerHTML;
 
@@ -91,7 +89,7 @@ function key(e) {
   userInput.innerText = input + e.key;
 }
 
-function backspace(e) {
+export function backspace(e) {
   const userInput = document.getElementById("userInput");
   if (e.keyCode !== 8 && e.keyCode !== 46) {
     return;
@@ -101,6 +99,3 @@ function backspace(e) {
     userInput.innerHTML.length - 1
   );
 }
-
-document.addEventListener("keydown", backspace);
-document.addEventListener("keypress", key);

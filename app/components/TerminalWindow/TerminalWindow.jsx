@@ -1,18 +1,22 @@
+"use client";
 import { useEffect } from "react";
+import { backspace, key } from "./terminalFunctions";
 import "../css/TerminalWindow.css";
 
 function TerminalWindow() {
-  function focusInput(){
+  function focusInput() {
     document.querySelector(".dummyKeyboard").focus();
+    document.addEventListener("keydown", backspace);
+    document.addEventListener("keypress", key);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     focusInput();
   }, []);
 
   return (
     <>
-      <div className="whole-terminal" onClick={focusInput}>
+      <div className="whole-terminal rounded-b-md" onClick={focusInput}>
         <div className="terminal-window primary-bg">
           <div id="terminalTextArea">
             <p className="weclome-message">
@@ -25,7 +29,8 @@ function TerminalWindow() {
             <span className="code terminal-line">&gt; ~ </span>
             <span
               className="user-Input code terminal-line"
-              id="userInput"></span>
+              id="userInput"
+            ></span>
             <input type="text" className="dummyKeyboard" id="dummy-Keyboard" />
           </div>
         </div>
