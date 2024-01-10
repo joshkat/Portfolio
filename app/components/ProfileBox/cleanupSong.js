@@ -1,11 +1,16 @@
 import Filter from "bad-words";
 
 function cleanupSong(inputString) {
-  const filter = new Filter();
-  filter.addWords("Kanye");
-  const filteredTitle = filter.clean(inputString);
-  if (filteredTitle.includes("*")) {
-    return filteredTitle;
+  try {
+    // need try catch bc Filter doesnt account for chars outside of ASCII
+    const filter = new Filter();
+    filter.addWords("Kanye");
+    const filteredTitle = filter.clean(inputString);
+    if (filteredTitle.includes("*")) {
+      return filteredTitle;
+    }
+  } catch (e) {
+    console.log(e);
   }
 
   if (inputString.charAt(0) === "(" || inputString.charAt(0) === "[") {

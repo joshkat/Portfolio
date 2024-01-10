@@ -17,7 +17,7 @@ function TerminalWindow() {
   return (
     <>
       <div
-        className="font-courier text-white h-80 max-w-[635px] bg-black break-words overflow-scroll overflow-x-hidden rounded-b-md"
+        className="font-courier text-white h-80 max-w-[587.5px] bg-black break-words overflow-scroll overflow-x-hidden rounded-b-md font-semibold"
         id="whole-terminal"
         onClick={focusInput}
       >
