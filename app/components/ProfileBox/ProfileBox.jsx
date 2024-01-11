@@ -1,31 +1,11 @@
-"use client";
-
+"use server";
 import RedirectIcon from "./RedirectIcon";
 import Image from "next/image";
 import MusicBox from "./MusicBox";
 import { getRecentTracks } from "./getRecentTracks";
-import { useEffect, useState } from "react";
 
-function ProfileBox() {
-  const [track, setTrack] = useState({
-    songName: "",
-    artistName: "",
-    songURL: "",
-  });
-
-  useEffect(() => {
-    async function fetchTrack() {
-      const data = await getRecentTracks();
-      setTrack({
-        songName: data.songName,
-        artistName: data.artistName,
-        songURL: data.songURL,
-      });
-    }
-
-    fetchTrack();
-  }, []);
-
+async function ProfileBox() {
+  const track = await getRecentTracks();
   return (
     <>
       <div className="flex flex-col justify-evenly bg-black w-60 h-80 p-5 rounded-2xl">
