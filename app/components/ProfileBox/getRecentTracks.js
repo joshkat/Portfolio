@@ -7,7 +7,7 @@ async function getRecentTracks() {
   const getRecentTracksEndpoint = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json`;
 
   const data = await fetch(getRecentTracksEndpoint, {
-    next: { revalidate: 60 },
+    next: { revalidate: 30 },
   });
   const response = await data.json();
   const songName = cleanupSong(response.recenttracks.track[0].name);

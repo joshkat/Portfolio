@@ -7,8 +7,18 @@ function MusicBox({ songName, artistName, songURL }) {
     <>
       <div
         className="relative flex items-center text-white"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+        onMouseEnter={() => {
+          if (window.innerWidth < 868) {
+            return;
+          }
+          setIsHovering(true);
+        }}
+        onMouseLeave={() => {
+          if (window.innerWidth < 868) {
+            return;
+          }
+          setIsHovering(false);
+        }}
       >
         <div className="text-center ml-1 mr-1">
           <a href="https://www.last.fm/user/josh-kat" target="_blank">
