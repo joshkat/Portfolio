@@ -22,7 +22,7 @@ const cmd = {
   projects: `
   <br> <i>Calorie Tracker & Blog</i>: <a href='https://github.com/olukukoyi/fitness-pals-ctp' id='link'>Code</a>
   <br> <i>AI Kitchen Companion</i>: <a href='https://github.com/MyPingO/chAfs-kIss' id='link'>Code</a>
-  <br> <i>Training Tracker</i>: <a href='https://github.com/joshkat/TrainingTracker' id='link'>Code</a> | <a href='https://training.katayev.io/' id='link'>Preview</a>
+  <br> <i>Training Tracker</i>: <a href='https://github.com/joshkat/Training-Tracker' id='link'>Code</a> | <a href='https://training.katayev.io/' id='link'>Preview</a>
   <br> <i>Sorting Visualizer</i>: <a href='https://github.com/joshkat/visualArraySort' id='link'>Code</a> | <a href='https://joshkat.github.io/visualArraySort/' id='link'>Preview</a>
   <br> <i>Spotify to Github Now Playing</i>: <a href='https://github.com/joshkat/Github-Now-Playing' id='link'>Code</a> | <a href='https://github-now-playing.onrender.com' id='link'>Preview</a>
   <br> <i>CV Generator</i>: <a href='https://github.com/joshkat/CV-Generator' id='link'>Code</a> | <a href='https://cv.katayev.io' id='link'>Preview</a>
@@ -57,7 +57,7 @@ function perform(input) {
       return;
     }
 
-    if(input == "timer"){
+    if (input == "timer") {
       location = "https://timer.katayev.io";
       return;
     }
