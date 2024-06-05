@@ -10,11 +10,11 @@ async function getRecentTracks() {
     next: { revalidate: 30 },
   });
   const response = await data.json();
-  const songName = cleanupSong(response.recenttracks.track[0].name);
+  const songName = cleanupSong(response?.recenttracks?.track[0]?.name);
   const artistName = cleanupSong(
-    response.recenttracks.track[0].artist["#text"]
+    response?.recenttracks?.track[0]?.artist["#text"]
   );
-  const songURL = response.recenttracks.track[0].url;
+  const songURL = response?.recenttracks?.track[0]?.url;
 
   return { songName, artistName, songURL };
 }

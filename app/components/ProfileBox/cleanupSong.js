@@ -1,6 +1,7 @@
 import Filter from "bad-words";
 
 function cleanupSong(inputString) {
+  if (inputString === undefined) return "*"; // for when LASTFM key ! in .env
   try {
     // need try catch bc Filter doesnt account for chars outside of ASCII
     const filter = new Filter();
