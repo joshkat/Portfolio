@@ -19,7 +19,7 @@ const cmd = {
   all: "<br>All commands avaliable are: help, about, resume, skills, contact, yeezy, easteregg, stop, developers, boom, clear, cls, projects, qwerty, qwertyuiopasdfghjklzxcvbnm",
   projects: `
   <br> <i>AI Kitchen Companion</i>: <a href='https://chAfskIss.com' id='link'>Preview</a>
-  <br> <i>Training Tracker</i>: <a href='https://github.com/joshkat/TrainingTracker' id='link'>Code</a> | <a href='https://training.katayev.io/' id='link'>Preview</a>
+  <br> <i>Training Tracker</i>: <a href='https://github.com/joshkat/Training-Tracker' id='link'>Code</a> | <a href='https://training.katayev.io/' id='link'>Preview</a>
   <br> <i>Sorting Visualizer</i>: <a href='https://github.com/joshkat/visualArraySort' id='link'>Code</a> | <a href='https://joshkat.github.io/visualArraySort/' id='link'>Preview</a>
   <br> <i>Spotify to Github Now Playing</i>: <a href='https://github.com/joshkat/Github-Now-Playing' id='link'>Code</a> | <a href='https://github-now-playing.onrender.com' id='link'>Preview</a>
   <br> <i>Memory Card Game</i>: <a href='https://github.com/joshkat/memory-card-game' id='link'>Code</a> | <a href='https://memory-game.katayev.io' id='link'>Preview</a>
