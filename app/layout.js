@@ -1,8 +1,8 @@
 import "./global.css";
 
 export const metadata = {
-  title: "Josh Katayev",
-  description: "My Portfolio",
+  title: "katayev.io",
+  description: "Experienced Web Developer and Computer Science graduate with expertise in JavaScript, Python, React, and more.",
 };
 
 export default function RootLayout({ children }) {

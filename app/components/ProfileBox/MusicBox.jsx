@@ -5,7 +5,6 @@ import { useState } from "react";
 function MusicBox({ songName, artistName, songURL }) {
   const [isHovering, setIsHovering] = useState(false);
   const cleanSongArray = [
-    "keshi - LIMBO",
     "Green Day - Burnout",
     "Polyphia - Playing God",
     "Ishay Ribo - סיבת הסיבות",
@@ -34,7 +33,10 @@ function MusicBox({ songName, artistName, songURL }) {
         }}
       >
         <div className="text-center ml-1 mr-1">
-          <Link href="https://www.last.fm/user/josh-kat" target="_blank">
+          <Link
+            href="https://open.spotify.com/user/senior_fuego"
+            target="_blank"
+          >
             🎵
           </Link>
         </div>
@@ -46,7 +48,7 @@ function MusicBox({ songName, artistName, songURL }) {
                 {artistName} - {songName}
               </Link>
             ) : (
-              <p>{cleanSongArray[Math.floor(Math.random() * 10)]}</p>
+              <p>{cleanSongArray[Math.floor(Math.random() * 9)]}</p>
             )}
           </div>
         )}
