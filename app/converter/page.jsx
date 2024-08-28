@@ -73,7 +73,7 @@ export default function Converter() {
       </button>
       <textarea
         value={hebrewText}
-        placeholder="Converted text will appear here"
+        placeholder="מילים מתורגמות יהיו כאן"
         rows="4"
         readOnly
         className="w-3/4"
