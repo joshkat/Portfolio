@@ -57,12 +57,13 @@ export default function Converter() {
       <h2 className="text-2xl sm:text-3xl text-white text-center">
         QWERTY to Hebrew Converter
       </h2>
-      <input
+      <textarea
         type="text"
+        rows="5"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         placeholder="Enter text in QWERTY"
-        className="input"
+        className="w-3/4"
       />
       <button
         onClick={handleConvert}
@@ -75,7 +76,8 @@ export default function Converter() {
         placeholder="Converted text will appear here"
         rows="4"
         readOnly
-        className="textarea"
+        className="w-3/4"
+        dir="rtl"
       />
     </div>
   );
