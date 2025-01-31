@@ -12,8 +12,8 @@ const cmd = {
   yeezy:
     '<br>Yeezy, Yeezy, what\'s good? <br> It\'s your boy Max B, what\'s going on? <br> Just checking in on you <br> Appreciate the love and support <br> The wave is here <br> <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1ZnA4VYOlYIShuGt60LmCs" width="65%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>',
   easteregg:
-    '<br>Wait there\'s no easter egg? <br> Always has been. <br> <img src="https://i.imgflip.com/6hdfd7.jpg" title="made at imgflip.com" height=150px>',
-  stop: '<br>hammertime <br> <img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px><img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height=50px>',
+    '<br>Wait there\'s no easter egg? <br> Always has been. <br> <img src="https://i.imgflip.com/6hdfd7.jpg" title="made at imgflip.com" height=150px width=300px>',
+  stop: '<br>hammertime <br> <img src="https://25.media.tumblr.com/tumblr_lrn9b5m2Dx1qgwi7to1_250.gif" height="100" width="100">',
   developers:
     '<br> <iframe width="280" height="157.5" src="https://www.youtube.com/embed/Vhh_GeBPOhs?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
   all: "<br>All commands avaliable are: help, about, resume, skills, contact, yeezy, easteregg, stop, developers, boom, clear, cls, projects, qwerty, qwertyuiopasdfghjklzxcvbnm",
