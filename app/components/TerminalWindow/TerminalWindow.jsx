@@ -3,6 +3,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { runCommand } from "./commands";
 import "../css/TerminalWindow.css";
 
+// Shared so the live input line and every echoed history line stay identical.
+// `{" "}` forces the trailing space JSX would otherwise trim next to the tag.
+function Prompt() {
+  return <span className="code terminal-line">&gt; ~{" "}</span>;
+}
+
 function TerminalWindow() {
   // Each entry is one printed block: the echoed command line + its output.
   const [history, setHistory] = useState([]);
@@ -71,7 +77,10 @@ function TerminalWindow() {
 
         {history.map((entry) => (
           <div className="code userOutput" key={entry.id}>
-            <div>&gt; ~ {entry.input}</div>
+            <div>
+              <Prompt />
+              {entry.input}
+            </div>
             {entry.node != null && (
               <div className="code outputLine">{entry.node}</div>
             )}
@@ -79,7 +88,7 @@ function TerminalWindow() {
         ))}
 
         <div className="flex">
-          <span className="code terminal-line">&gt; ~ </span>
+          <Prompt />
           <input
             ref={inputRef}
             type="text"
