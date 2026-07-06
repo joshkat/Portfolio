@@ -4,9 +4,11 @@ import { runCommand } from "./commands";
 import "../css/TerminalWindow.css";
 
 // Shared so the live input line and every echoed history line stay identical.
-// `{" "}` forces the trailing space JSX would otherwise trim next to the tag.
+// The gap after `~` comes from CSS margin (.prompt), not a trailing space: a
+// real space collapses at the end of the prompt's flex item and the cursor
+// ended up flush against the tilde.
 function Prompt() {
-  return <span className="code terminal-line">&gt; ~{" "}</span>;
+  return <span className="code terminal-line prompt">&gt;&nbsp;~</span>;
 }
 
 function TerminalWindow() {
@@ -77,9 +79,9 @@ function TerminalWindow() {
 
         {history.map((entry) => (
           <div className="code userOutput" key={entry.id}>
-            <div>
+            <div className="flex">
               <Prompt />
-              {entry.input}
+              <span>{entry.input}</span>
             </div>
             {entry.node != null && (
               <div className="code outputLine">{entry.node}</div>

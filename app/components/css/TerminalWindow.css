@@ -8,6 +8,11 @@
   text-decoration: none;
 }
 
+.prompt {
+  margin-right: 0.5ch;
+  white-space: nowrap;
+}
+
 .terminal-input {
   background: transparent;
   border: none;
