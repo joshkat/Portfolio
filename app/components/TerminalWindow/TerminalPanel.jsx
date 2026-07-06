@@ -3,20 +3,30 @@ import { useCallback, useRef, useState } from "react";
 import TerminalTopBar from "./TerminalTopBar";
 import TerminalWindow from "./TerminalWindow";
 
-// Wraps the top bar + terminal so the window can be dragged around by its top
-// bar and minimized to a pill. The window stays mounted while minimized so the
-// terminal history is preserved when you reopen it.
+const DEFAULT_SIZE = { width: 587.5, height: 352 };
+const MIN_WIDTH = 320;
+const MIN_HEIGHT = 200;
+
+// Wraps the top bar + terminal so the window can be dragged by its top bar,
+// minimized to a pill, maximized to fill the screen, and resized from its
+// edges/corner. The window stays mounted throughout so terminal history is
+// preserved.
 function TerminalPanel() {
   const [minimized, setMinimized] = useState(false);
+  const [maximized, setMaximized] = useState(false);
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [size, setSize] = useState(DEFAULT_SIZE);
 
-  // Drag state lives in a ref so pointer moves don't trigger re-renders.
+  // Gesture state lives in refs so pointer moves don't trigger re-renders.
   const drag = useRef(null);
+  const resize = useRef(null);
 
+  // --- drag (top bar) ----------------------------------------------------
   const onPointerDown = useCallback(
     (e) => {
-      // Ignore non-primary buttons and clicks on the window controls.
-      if (e.button !== 0 || e.target.closest("[data-no-drag]")) return;
+      // Ignore non-primary buttons, the window controls, and maximized mode.
+      if (e.button !== 0 || maximized || e.target.closest("[data-no-drag]"))
+        return;
       drag.current = {
         startX: e.clientX,
         startY: e.clientY,
@@ -25,7 +35,7 @@ function TerminalPanel() {
       };
       e.currentTarget.setPointerCapture?.(e.pointerId);
     },
-    [pos]
+    [pos, maximized]
   );
 
   const onPointerMove = useCallback((e) => {
@@ -41,20 +51,87 @@ function TerminalPanel() {
     drag.current = null;
   }, []);
 
+  // --- resize (edge / corner handles) ------------------------------------
+  const startResize = (dir) => (e) => {
+    if (e.button !== 0) return;
+    e.stopPropagation(); // don't start a drag
+    resize.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      w: size.width,
+      h: size.height,
+      dir,
+    };
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+  };
+
+  const onResizeMove = useCallback((e) => {
+    const r = resize.current;
+    if (!r) return;
+    setSize({
+      width: r.dir.includes("e")
+        ? Math.max(MIN_WIDTH, r.w + (e.clientX - r.startX))
+        : r.w,
+      height: r.dir.includes("s")
+        ? Math.max(MIN_HEIGHT, r.h + (e.clientY - r.startY))
+        : r.h,
+    });
+  }, []);
+
+  const endResize = useCallback(() => {
+    resize.current = null;
+  }, []);
+
+  const resizeHandle = (dir, className) => (
+    <div
+      data-no-drag
+      onPointerDown={startResize(dir)}
+      onPointerMove={onResizeMove}
+      onPointerUp={endResize}
+      onPointerCancel={endResize}
+      className={`absolute touch-none ${className}`}
+    />
+  );
+
+  // Maximizing keeps `pos`/`size` in state and simply stops applying them, so
+  // pressing green again restores the window to exactly where/what it was.
+  const panelClass = maximized
+    ? "fixed inset-3 z-40 flex flex-col"
+    : "relative flex flex-col m-5";
+  const panelStyle = maximized
+    ? undefined
+    : {
+        width: size.width,
+        height: size.height,
+        transform: `translate(${pos.x}px, ${pos.y}px)`,
+      };
+
   return (
     <>
       <div
-        className={`flex flex-col m-5 ${minimized ? "hidden" : ""}`}
-        style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
+        className={`${panelClass} ${minimized ? "hidden" : ""}`}
+        style={panelStyle}
       >
         <TerminalTopBar
           onMinimize={() => setMinimized(true)}
+          onMaximize={() => setMaximized((m) => !m)}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}
           onPointerCancel={endDrag}
         />
         <TerminalWindow />
+
+        {!maximized && (
+          <>
+            {resizeHandle("e", "top-0 right-0 h-full w-1.5 cursor-ew-resize")}
+            {resizeHandle("s", "bottom-0 left-0 w-full h-1.5 cursor-ns-resize")}
+            {resizeHandle(
+              "se",
+              "bottom-0 right-0 h-3 w-3 cursor-nwse-resize"
+            )}
+          </>
+        )}
       </div>
 
       {minimized && (
