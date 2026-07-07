@@ -1,7 +1,7 @@
 import "./global.css";
 
 export const metadata = {
-  title: "katayev.io",
+  title: "Katayev Portfolio",
   description:
     "Experienced Web Developer and Computer Science graduate with expertise in JavaScript, Python, React, and more.",
   robots: "noindex, nofollow",

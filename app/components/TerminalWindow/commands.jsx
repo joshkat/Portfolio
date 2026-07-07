@@ -29,6 +29,7 @@ function Link({ href, children }) {
 
 export const commands = {
   help: {
+    hidden: true,
     description: "list the main commands",
     run: (ctx) => (
       <>
@@ -39,6 +40,7 @@ export const commands = {
   },
 
   all: {
+    hidden: true,
     description: "list every command, including the fun ones",
     run: (ctx) => (
       <>All commands available are: {Object.keys(ctx.commands).join(", ")}</>
@@ -75,9 +77,9 @@ export const commands = {
     run: () => (
       <>
         I would describe myself as a full stack web developer and am proficient
-        in: JavaScript, React, Node.js, Express.js along with a plethora of other
-        technologies and frameworks related to webdev [The full list of which is
-        featured on my resume :)]
+        in: JavaScript, React, Node.js, Express.js along with a plethora of
+        other technologies and frameworks related to webdev [The full list of
+        which is featured on my resume :)]
       </>
     ),
   },
@@ -93,27 +95,25 @@ export const commands = {
   },
 
   projects: {
-    description: "things I've built",
+    description: "things I've built or helped contribute to",
     run: () => (
       <>
-        <i>AI Kitchen Companion</i>:{" "}
-        <Link href="https://chAfskIss.com">Preview</Link>
+        <i>Dental Practice Management Software</i>:{" "}
+        <Link href="https://github.com/joshkat/dentalcore">Code</Link>
         <br />
         <i>Training Tracker</i>:{" "}
         <Link href="https://github.com/joshkat/Training-Tracker">Code</Link> |{" "}
-        <Link href="https://training.katayev.io/">Preview</Link>
+        <Link href="https://training-tracker-joshkats-projects.vercel.app">
+          Preview
+        </Link>
         <br />
         <i>Sorting Visualizer</i>:{" "}
         <Link href="https://github.com/joshkat/visualArraySort">Code</Link> |{" "}
         <Link href="https://joshkat.github.io/visualArraySort/">Preview</Link>
         <br />
-        <i>Spotify to Github Now Playing</i>:{" "}
-        <Link href="https://github.com/joshkat/Github-Now-Playing">Code</Link> |{" "}
-        <Link href="https://github-now-playing.onrender.com">Preview</Link>
-        <br />
         <i>Memory Card Game</i>:{" "}
         <Link href="https://github.com/joshkat/memory-card-game">Code</Link> |{" "}
-        <Link href="https://memory-game.katayev.io">Preview</Link>
+        <Link href="https://poke613.vercel.app">Preview</Link>
       </>
     ),
   },
@@ -210,11 +210,6 @@ export const commands = {
   boom: {
     hidden: true,
     run: (ctx) => ctx.playAudio("/boom.mp3"),
-  },
-
-  timer: {
-    hidden: true,
-    run: (ctx) => ctx.redirect("https://timer.katayev.io"),
   },
 
   qwerty: {

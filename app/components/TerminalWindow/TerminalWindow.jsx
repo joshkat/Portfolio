@@ -73,7 +73,7 @@ function TerminalWindow() {
     >
       <div className="text-sm ml-2 mr-2">
         <p className="mt-3">
-          Welcome to katayev.io, type in <span className="help">help</span> to
+          Welcome to my portfolio, type in <span className="help">help</span> to
           get a list of usable commands
         </p>
 
